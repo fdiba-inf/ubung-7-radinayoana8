@@ -11,26 +11,28 @@ public class RecursivePrimePrinter {
 
         printPrimes(n);
     }
-
-    public static void printPrimes(int n) {
-        if (n == 0) {
+      public static void printPrimes(int n) {
+        if (n == 0){
           return;
+        }
+        if (isPrime(n)){
+          System.out.println(n);
+        
+        }
+        printPrimes(n - 1);
     }
-    if (isPrime(n)){
-      System.out.print(n);
 
-    }
-     printPrimes(n - 1);
-    }
-    
-     public static boolean isPrime(int n) {
-        int divider = 2;
-        while (divider < n) {
-          if  (n % divider == 0) {  
-        return false;
+    public static boolean isPrime(int n) {
+       int divider = 2;
+       while (divider < n){
+         if (n % divider == 0){
+          return false;
+         }
+         divider++;
        }
-       divider++;
-      }
-      return true;
-    }  
+       return true;
+    }
 }
+
+    
+     
